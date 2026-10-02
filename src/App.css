@@ -1,0 +1,705 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #060913;
+  color: white;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 15%, #172554 0%, #0b1020 35%, #060913 70%);
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+  height: 75px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(6, 9, 19, 0.88);
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.logo span {
+  font-size: 26px;
+}
+
+.navButton {
+  padding: 10px 18px;
+  border-radius: 9px;
+  border: 1px solid #334155;
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.navButton:hover {
+  transform: translateY(-2px);
+  border-color: #60a5fa;
+}
+
+/* =========================
+   HOME PAGE
+========================= */
+
+.hero {
+  width: min(1100px, 90%);
+  margin: auto;
+  padding: 90px 0 60px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 100px;
+  border: 1px solid #334d82;
+  background: rgba(37, 99, 235, 0.08);
+  color: #93c5fd;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: clamp(48px, 7vw, 78px);
+  line-height: 1.03;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #60a5fa, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 27px auto 0;
+  color: #a8b3c7;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.primary,
+.secondary {
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.primary {
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: white;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+}
+
+.secondary {
+  border: 1px solid #334155;
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+}
+
+.primary:hover,
+.secondary:hover {
+  transform: translateY(-2px);
+}
+
+.features {
+  margin-top: 85px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  text-align: left;
+}
+
+.card {
+  min-height: 190px;
+  padding: 27px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.65);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+}
+
+.icon {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  color: #94a3b8;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* =========================
+   TRAINING PAGE
+========================= */
+
+.trainingPage {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 0%, #172554 0%, #0b1020 35%, #060913 75%);
+}
+
+.trainingContainer {
+  width: min(1150px, 92%);
+  margin: auto;
+  padding: 55px 0 80px;
+}
+
+.trainingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.smallLabel {
+  color: #60a5fa;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.trainingHeader h1 {
+  margin: 8px 0;
+  font-size: 36px;
+}
+
+.trainingHeader p {
+  margin: 0;
+  color: #94a3b8;
+}
+
+.progressBox {
+  min-width: 130px;
+  padding: 17px 22px;
+  border: 1px solid #273449;
+  border-radius: 13px;
+  background: #0f172a;
+  text-align: center;
+}
+
+.progressBox strong {
+  display: block;
+  font-size: 24px;
+  color: #60a5fa;
+}
+
+.progressBox span {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* =========================
+   PROCEDURE
+========================= */
+
+.procedure {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #273449;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.8);
+  color: #cbd5e1;
+}
+
+.procedure strong {
+  color: white;
+  margin-right: auto;
+}
+
+/* =========================
+   VISUAL SIMULATOR
+========================= */
+
+.simulator {
+  border: 1px solid #273449;
+  border-radius: 18px;
+  background: rgba(10, 15, 29, 0.95);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.visualSimulator {
+  position: relative;
+  min-height: 470px;
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  gap: 50px;
+  padding: 25px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* =========================
+   SVG CABLES
+========================= */
+
+.wireCanvas {
+  position: absolute;
+  inset: 25px;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.cable {
+  fill: none;
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: connectCable 0.65s ease forwards;
+}
+
+.cableRed {
+  stroke: #ef4444;
+  filter: drop-shadow(0 0 7px #ef4444);
+}
+
+.cableYellow {
+  stroke: #facc15;
+  filter: drop-shadow(0 0 7px #facc15);
+}
+
+.cableGreen {
+  stroke: #22c55e;
+  filter: drop-shadow(0 0 7px #22c55e);
+}
+
+@keyframes connectCable {
+  from {
+    stroke-dashoffset: 1200;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* =========================
+   LEFT + RIGHT PANELS
+========================= */
+
+.visualPanel {
+  position: relative;
+  z-index: 3;
+}
+
+.panelTitle {
+  margin-bottom: 18px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.visualWire,
+.visualTerminal {
+  position: relative;
+  width: 100%;
+  height: 95px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px;
+  border: 1px solid #273449;
+  border-radius: 14px;
+  background: rgba(17, 24, 39, 0.97);
+  color: white;
+  text-align: left;
+  transition: 0.2s ease;
+}
+
+.visualWire:hover,
+.visualTerminal:hover {
+  transform: translateY(-2px);
+  border-color: #475569;
+}
+
+.visualWire.selected {
+  border-color: #60a5fa;
+  box-shadow:
+    0 0 0 2px rgba(96, 165, 250, 0.15),
+    0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.visualWire.connected {
+  border-color: #166534;
+  background: rgba(34, 197, 94, 0.06);
+}
+
+.visualWire div,
+.visualTerminal div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.visualWire strong,
+.visualTerminal strong {
+  font-size: 14px;
+}
+
+.visualWire small,
+.visualTerminal small {
+  color: #64748b;
+  font-size: 11px;
+}
+
+/* =========================
+   WIRE COMPONENTS
+========================= */
+
+.wirePlug {
+  width: 15px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+.sourcePort {
+  position: absolute;
+  right: -13px;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 4px solid;
+  border-radius: 50%;
+  background: #080d18;
+  font-size: 12px;
+  font-weight: 900;
+  color: #22c55e;
+}
+
+/* =========================
+   TERMINALS
+========================= */
+
+.visualTerminal {
+  cursor: pointer;
+  padding-left: 30px;
+}
+
+.targetPort {
+  position: absolute;
+  left: -13px;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 4px solid #64748b;
+  border-radius: 50%;
+  background: #080d18;
+  color: #22c55e;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.visualTerminal:hover .targetPort {
+  border-color: #60a5fa;
+}
+
+.terminalUsed {
+  border-color: #166534;
+  background: rgba(34, 197, 94, 0.06);
+}
+
+.terminalUsed .targetPort {
+  border-color: #22c55e;
+}
+
+/* =========================
+   CENTER STATUS
+========================= */
+
+.centerStatus {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.trainingChip {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 6px 10px;
+  border: 1px solid #1e3a5f;
+  border-radius: 100px;
+  color: #60a5fa;
+  background: #0b1528;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.centerIcon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 13px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #334155;
+  border-radius: 50%;
+  background: #0f172a;
+  font-size: 26px;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+.centerStatus strong {
+  display: block;
+  color: white;
+  font-size: 13px;
+}
+
+.centerStatus span {
+  display: block;
+  max-width: 145px;
+  margin: 7px auto;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================
+   AI COACH
+========================= */
+
+.coach {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 18px 20px;
+  border: 1px solid #273449;
+  border-radius: 13px;
+  background: #0f172a;
+  transition: 0.25s ease;
+}
+
+.coachIcon {
+  font-size: 28px;
+}
+
+.coach strong {
+  font-size: 14px;
+}
+
+.coach p {
+  margin: 5px 0 0;
+  color: #94a3b8;
+}
+
+.coach.correct {
+  border-color: #166534;
+  background: rgba(34, 197, 94, 0.07);
+}
+
+.coach.wrong {
+  border-color: #991b1b;
+  background: rgba(239, 68, 68, 0.07);
+}
+
+.coach.warning {
+  border-color: #a16207;
+  background: rgba(234, 179, 8, 0.07);
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.stats strong {
+  color: white;
+}
+
+.stats button {
+  margin-left: auto;
+  padding: 9px 14px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: transparent;
+  color: #cbd5e1;
+  transition: 0.2s ease;
+}
+
+.stats button:hover {
+  border-color: #60a5fa;
+  color: white;
+}
+
+/* =========================
+   COMPLETION
+========================= */
+
+.complete {
+  margin-top: 25px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #166534;
+  border-radius: 16px;
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.completeIcon {
+  width: 55px;
+  height: 55px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #052e16;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.complete h2 {
+  margin: 14px 0 6px;
+}
+
+.complete p {
+  color: #94a3b8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .visualSimulator {
+    grid-template-columns: 1fr;
+  }
+
+  .wireCanvas {
+    display: none;
+  }
+
+  .centerStatus {
+    padding: 20px;
+  }
+
+  .sourcePort,
+  .targetPort {
+    position: static;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 750px) {
+  .hero {
+    padding-top: 60px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    margin-top: 55px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .trainingHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .procedure {
+    flex-wrap: wrap;
+  }
+
+  .stats {
+    flex-wrap: wrap;
+  }
+
+  .stats button {
+    margin-left: 0;
+  }
+}
